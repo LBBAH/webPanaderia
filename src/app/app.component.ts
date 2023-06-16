@@ -7,9 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'panaderiaWeb';
+
   
   url: string = "../assets/img1.jpg";
   imageChange(event: any){
-      this.url = event.target.src;
-}
+      this.url = event.target.src;  
+  }
 }
