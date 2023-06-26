@@ -1,1 +1,31 @@
-<p>login works!</p>
+<form action="" [formGroup]="loginUser" (ngSubmit)="login()">
+    
+    <div class="rounded d-flex justify-content-center" style="padding-top: 10px;">
+        <div class="col-md-7 col-sm-12 p-5 border">
+            <div class="text-center">
+                <h3 class="text-primary">Iniciar sesión</h3>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text"  style="background-color: #3f51b5;">
+                        <i class="bi bi-person-fill text-white"></i>                        
+                    </span>
+                    <div class="form-floating">
+                        <input type="text" formControlName="email" class="form-control" placeholder="Email">
+                        <label for="floatingInput">Usuario</label>
+                    </div>                    
+                </div>  
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" style="background-color: #3f51b5;">
+                        <i class="bi bi-key-fill text-white"></i>
+                    </span>
+                    <div class="form-floating">
+                        <input type="password" class="form-control" formControlName="password" placeholder="Password">
+                        <label for="floatingInput">Password</label>
+                    </div>                    
+                </div>
+                <button type="submit" mat-raised-button color="primary">Entrar</button>
+            </div>
+        </div>
+    </div>
+</form>
