@@ -9,6 +9,8 @@ import { RegistroComponent } from './components/registro/registro.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 
 const routes: Routes =[
   {path:'', pathMatch:'full', redirectTo:'home'},
@@ -29,6 +31,7 @@ const routes: Routes =[
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
 
     RouterModule.forRoot(
