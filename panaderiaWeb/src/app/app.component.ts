@@ -32,7 +32,7 @@ export class AppComponent implements OnInit{
                 value:this.producto.precio
               }
             }
-          ]          
+          ]
         })
       },
       onApprove: async(data, actions)=>{
