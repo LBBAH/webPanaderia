@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { IddServicesService } from 'src/app/service/idd-services.service';
+import axios from 'axios';
 
 @Component({
   selector: 'app-registro',
@@ -17,6 +18,7 @@ export class RegistroComponent {
       name:['', [Validators.required]],
       nameUser:['', [Validators.required]],
       phone:['', [Validators.required]],
+      cp:['', [Validators.required]],
       email:['' , [Validators.required, Validators.pattern(this.emailPattern)]],
       password:['', [Validators.required, Validators.minLength(8), Validators.pattern(this.passPattern)]],
       confirmpassword:['', [Validators.required]],
@@ -54,6 +56,39 @@ export class RegistroComponent {
 
   registrarUsuario(): any{
     if(this.formUser.valid){
+    const email = this.formUser.get('email')?.value;
+
+    axios.get(`https://api.hunter.io/v2/email-verifier?email=${email}&domain_search=uthh.edu.mx&api_key=b7c17eb8a0f0ee28d6606f2677710cd1bf7f1bc0`)
+      .then(response => {
+        // Aquí puedes manejar la respuesta de la API
+        console.log(response.data);
+
+        // Resto de la lógica para agregar el usuario
+        this.dataService.adduser(this.formUser.value).subscribe(res => {
+          let arr = Object.entries(res);
+          if (arr[0][0] == "error") {
+            alert(arr[0][1]);
+          }
+
+          if (arr[0][0] == "success") {
+            alert(arr[0][1]);
+            this.formUser.reset();
+          }
+        });
+      })
+      .catch(error => {
+        alert("Error: el correo no existe")
+        console.error(error);
+      });
+    }
+    if(!this.formUser.valid){
+      alert("Llene todos los campos correctamente")
+    }
+  }
+
+
+/**   registrarUsuario(): any{
+    if(this.formUser.valid){
       this.dataService.adduser(this.formUser.value).subscribe(res => {
         let arr = Object.entries(res);
         if(arr[0][0] == "error"){
@@ -71,10 +106,13 @@ export class RegistroComponent {
       alert("Llene todos los campos correctamente")
     }
   }
+*/
 
+  
   get _name(){ return this.formUser.get('name');}
   get nameUser(){ return this.formUser.get('nameUser');}
   get phone(){ return this.formUser.get('phone');}
+  get cp(){ return this.formUser.get('cp');}
   get email(){ return this.formUser.get('email');}
   get password(){ return this.formUser.get('password');}
   get confirmpassword(){ return this.formUser.get('confirmpassword');}  

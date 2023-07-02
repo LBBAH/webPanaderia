@@ -3,6 +3,7 @@ export class User {
     _name!:String;
     nameUser!:String;
     phone!:String;
+    cp!:String
     email!:String;    
     password!:String;
     confirmpassword!:String;
