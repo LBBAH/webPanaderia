@@ -39,11 +39,6 @@ class UserController extends Controller
                     $user -> cp = $request->cp;
                     $user -> phone = $request->phone;                    
                     $user -> password = Hash::make($request->password);
-
-
-
-
-                    $user -> typeUser = 1;
             
                     $user -> save();
             
@@ -69,7 +64,6 @@ class UserController extends Controller
         $user -> cp = $request->cp;
         $user -> phone = $request->phone;
         $user -> password = $request->password;
-        $user -> typeUser = 1;
 
         $user -> save();
         return response($user,200);
