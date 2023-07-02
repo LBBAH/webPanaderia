@@ -1,15 +1,18 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { FooterComponent } from './components/footer/footer.component';
+
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+
 
 
 const routes: Routes =[
@@ -31,6 +34,7 @@ const routes: Routes =[
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+
     HttpClientModule,
     ReactiveFormsModule,
 
@@ -38,7 +42,14 @@ const routes: Routes =[
       routes
     ),
     
+
+    ReactiveFormsModule,
+    RouterModule.forRoot(
+      routes
+    )
+
   ],
+  exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -69,7 +69,6 @@ export class RegistroComponent {
             return;
           }
   
-          // Resto de la lógica para agregar el usuario
           this.dataService.adduser(this.formUser.value).subscribe(res => {
             let arr = Object.entries(res);
             if (arr[0][0] == "error") {

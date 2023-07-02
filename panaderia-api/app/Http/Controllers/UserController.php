@@ -36,9 +36,19 @@ class UserController extends Controller
                     $user -> name = $request->name;
                     $user -> nameUser = $request->nameUser;
                     $user -> email = $request->email;
+<<<<<<< HEAD
                     $user -> cp = $request->cp;
                     $user -> phone = $request->phone;                    
                     $user -> password = Hash::make($request->password);
+=======
+                    $user -> phone = $request->phone;                    
+                    $user -> password = Hash::make($request->password);
+
+
+
+
+                    $user -> typeUser = 1;
+>>>>>>> origin/devep
             
                     $user -> save();
             
@@ -61,9 +71,15 @@ class UserController extends Controller
         $user -> _name = $request->_name;
         $user -> nameUser = $request->nameUser;
         $user -> email = $request->email;
+<<<<<<< HEAD
         $user -> cp = $request->cp;
         $user -> phone = $request->phone;
         $user -> password = $request->password;
+=======
+        $user -> phone = $request->phone;
+        $user -> password = $request->password;
+        $user -> typeUser = 1;
+>>>>>>> origin/devep
 
         $user -> save();
         return response($user,200);
