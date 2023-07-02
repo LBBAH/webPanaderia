@@ -10,12 +10,6 @@ declare var paypal: { Buttons: (arg0: { createOrder: (data: any, action: any) =>
 export class AppComponent implements OnInit{
   title = 'panaderiaWeb';
 
-<<<<<<< HEAD
-=======
-  
-  
-
->>>>>>> origin/devep
   @ViewChild('paypal', { static: true }) paypalElement!: ElementRef;
 
   producto={
@@ -24,10 +18,9 @@ export class AppComponent implements OnInit{
     img:'img-pan-glaseado'
 
   }
-<<<<<<< HEAD
-=======
+
 RegisterLogin: any;
->>>>>>> origin/devep
+
 
   ngOnInit(): void {
     paypal.
@@ -42,11 +35,9 @@ RegisterLogin: any;
                 value:this.producto.precio
               }
             }
-<<<<<<< HEAD
+
           ]
-=======
-          ]          
->>>>>>> origin/devep
+
         })
       },
       onApprove: async(data, actions)=>{

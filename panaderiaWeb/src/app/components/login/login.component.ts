@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
-<<<<<<< HEAD
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-=======
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
->>>>>>> origin/devep
 import { Router } from '@angular/router';
 import { UsersService } from 'src/app/services/users.service';
 
@@ -46,10 +42,8 @@ export class LoginComponent {
       alert("Llene todos los datos")
     }
   }
-<<<<<<< HEAD
-}
-=======
+
 
 }
 
->>>>>>> origin/devep
+

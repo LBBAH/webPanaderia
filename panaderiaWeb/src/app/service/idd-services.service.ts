@@ -1,11 +1,10 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-<<<<<<< HEAD
-=======
+
 import { Recurso } from './recurso';
 import { tipoRecurso } from 'src/app/service/tiporecurso';
->>>>>>> origin/devep
+
 
 @Injectable({
   providedIn: 'root'
@@ -25,23 +24,10 @@ export class IddServicesService {
   
     login(datosUsuario:any) {
       return this.httpClient.post('http://127.0.0.1:8000/api/login', datosUsuario);
-<<<<<<< HEAD
+
     }  
-=======
-    }
-  
-    getTypeRecurs() {
-      return this.httpClient.get('http://127.0.0.1:8000/api/getTypeRecurs');
-    }
-  
-    findBandId(id:any):Observable<Recurso[]>{
-      return this.httpClient.get<Recurso[]>('http://127.0.0.1:8000/api/getrecurosId/'+id);
-    }
-  
-    search():Observable<tipoRecurso[]>{
-      return this.httpClient.get<tipoRecurso[]>('http://127.0.0.1:8000/api/search');
-    }
->>>>>>> origin/devep
+
+   
 
     logout(allDevice: boolean){
       const user:any = localStorage.getItem('user');
@@ -65,8 +51,6 @@ export class IddServicesService {
       return this.httpClient.post('http://127.0.0.1:8000/api/updateUser/'+id, datosUsuario);
     }
 
-<<<<<<< HEAD
-=======
     getQuestions(){
       return this.httpClient.get('http://127.0.0.1:8000/api/getQuestion');
     }
@@ -78,33 +62,5 @@ export class IddServicesService {
     changePassword(idUser:any, dataQuestionUser:any){
       return this.httpClient.post('http://127.0.0.1:8000/api/changePassword/'+idUser, dataQuestionUser);
     }
-
-    getrecurosIdUser(id:any){
-      return this.httpClient.post('http://127.0.0.1:8000/api/getrecurosIdUser',id);
-    }
     
-    getAsociasiones(){
-      return this.httpClient.get('http://127.0.0.1:8000/api/getAsociasiones');
-    }
-
-    getTypeRecursos(){
-      return this.httpClient.get('http://127.0.0.1:8000/api/getTypeRecurs');
-    }
-
-    getrecurosEditId(id:any){
-      return this.httpClient.post('http://127.0.0.1:8000/api/getrecurosEditId',id);
-    }
-
-    showObejtivoCursoId(id:any){
-      return this.httpClient.post('http://127.0.0.1:8000/api/showObejtivoCursoId',id);
-    }
-
-    showSeccionCursoId(id:any){
-      return this.httpClient.post('http://127.0.0.1:8000/api/showSeccionCursoId',id);
-    }
-
-    getRolPrivUser(id_rol:any){
-      return this.httpClient.post('http://127.0.0.1:8000/api/rolPrivUser',id_rol);
-    }
->>>>>>> origin/devep
 }

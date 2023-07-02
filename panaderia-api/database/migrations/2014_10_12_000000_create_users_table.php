@@ -16,15 +16,10 @@ return new class extends Migration
             $table->string('name');
             $table->string('nameUser');
             $table->string('phone');
-<<<<<<< HEAD
             $table->string('cp');
-=======
->>>>>>> origin/devep
+
             $table->string('email')->unique();
             $table->string('password');
-            $table->unsignedBigInteger('typeUser')->nullable();
-
-            $table->foreign('typeUser')->references('id')->on('rols');
             $table->rememberToken();
             $table->timestamps();
         });

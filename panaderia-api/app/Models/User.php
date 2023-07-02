@@ -7,22 +7,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
-<<<<<<< HEAD
-use Illuminate\Database\Eloquent\Model;
-=======
 
->>>>>>> origin/devep
+use Illuminate\Database\Eloquent\Model;
 
 class User extends Model
 {
     use HasFactory;
 
-<<<<<<< HEAD
 
-=======
-    public $timestamps = false;
->>>>>>> origin/devep
-    
+    public $timestamps = false;    
     /**
      * The attributes that are mass assignable.
      *
@@ -33,10 +26,7 @@ class User extends Model
         'nameUser',
         'email',
         'password',
-<<<<<<< HEAD
         'cp',
-=======
->>>>>>> origin/devep
         'phone',
         'typeUser'
     ];
